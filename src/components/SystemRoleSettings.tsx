@@ -38,7 +38,7 @@ export default (props: Props) => {
         <Show when={!props.currentSystemRoleSettings() && props.canEdit()}>
           <span onClick={() => props.setSystemRoleEditing(!props.systemRoleEditing())} class="sys-edit-btn">
             <IconEnv />
-            <span>Add System Role</span>
+            <span>Agregar rol de sistema</span>
           </span>
         </Show>
       </Show>
@@ -46,13 +46,13 @@ export default (props: Props) => {
         <div>
           <div class="fi gap-1 op-50 dark:op-60">
             <IconEnv />
-            <span>Función Del sistema:</span>
+            <span>Función del sistema:</span>
           </div>
-          <p class="my-2 leading-normal text-sm op-50 dark:op-60">Gently instruct the assistant and set the behavior of the assistant.</p>
+          <p class="my-2 leading-normal text-sm op-50 dark:op-60">Instruya suavemente al asistente y establezca el comportamiento del asistente.</p>
           <div>
             <textarea
               ref={systemInputRef!}
-              placeholder="You are a helpful assistant, answer as concisely as possible...."
+              placeholder="Eres un asistente útil, responde de la manera más concisa posible....."
               autocomplete="off"
               autofocus
               rows="3"
