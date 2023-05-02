@@ -1,102 +1,70 @@
 # ChatGPT-API Demo
 
-English | [简体中文](./README.zh-CN.md)
+Un repositorio de demostración basado en [OpenAI GPT-3.5 Turbo API.](https://platform.openai.com/docs/guides/chat)
 
-A demo repo based on [OpenAI GPT-3.5 Turbo API.](https://platform.openai.com/docs/guides/chat)
+**🍿 Vista previa**: https://chatgpt-agfa.vercel.app
 
-**🍿 Live preview**: https://chatgpt.ddiu.me
-
-> ⚠️ Notice: Our API Key limit has been exhausted. So the demo site is not available now.
+> ⚠️ Aviso: nuestro límite de clave API se ha agotado. Por lo tanto, el sitio de demostración no está disponible ahora.
 
 ![chat-logo](https://cdn.staticaly.com/gh/yzh990918/static@master/chat-logo.webp)
 
-## Introducing `Anse`
+## Ejecución local
 
-Looking for multi-chat, image-generation, and more powerful features? Take a look at our newly launched [Anse](https://github.com/anse-app/anse).
-
-More info on https://github.com/ddiu8081/chatgpt-demo/discussions/247.
-
-[![image](https://user-images.githubusercontent.com/1998168/235048408-ca4015f5-4d3c-4c64-9a6c-9069a89cd23a.png)](https://github.com/anse-app/anse)
-
-## Running Locally
-
-### Pre environment
-1. **Node**: Check that both your development environment and deployment environment are using `Node v18` or later. You can use [nvm](https://github.com/nvm-sh/nvm) to manage multiple `node` versions locally。
+### Pre ambiente
+1. **Node**: Verifique que tanto su entorno de desarrollo como su entorno de implementación estén utilizando `Node v18` o después. Puedes usar [nvm](https://github.com/nvm-sh/nvm) para administrar múltiples `node` versiones localmente。
    ```bash
     node -v
    ```
-2. **PNPM**: We recommend using [pnpm](https://pnpm.io/) to manage dependencies. If you have never installed pnpm, you can install it with the following command:
+2. **PNPM**: Recomendamos usar [pnpm](https://pnpm.io/) para administrar las dependencias. Si nunca ha instalado pnpm, puede instalarlo con el siguiente comando:
    ```bash
     npm i -g pnpm
    ```
-3. **OPENAI_API_KEY**: Before running this application, you need to obtain the API key from OpenAI. You can register the API key at [https://beta.openai.com/signup](https://beta.openai.com/signup).
+3. **OPENAI_API_KEY**: Antes de ejecutar esta aplicación, debe obtener la clave API de OpenAI. Puede registrar la clave API en [https://beta.openai.com/signup](https://beta.openai.com/signup).
 
-### Getting Started
+### Empezando
 
-1. Install dependencies
+1. Instalar dependencias
    ```bash
     pnpm install
    ```
-2. Copy the `.env.example` file, then rename it to `.env`, and add your [OpenAI API key](https://platform.openai.com/account/api-keys) to the `.env` file.
+2. Copia el `.env.example` archivo, luego cámbiele el nombre a `.env`, y agrega tu [OpenAI API key](https://platform.openai.com/account/api-keys) hacia el `.env` archivo.
    ```bash
     OPENAI_API_KEY=sk-xxx...
    ```
-3. Run the application, the local project runs on `http://localhost:3000/`
+3. Ejecute la aplicación, el proyecto local se ejecuta en `http://localhost:3000/`
    ```bash
     pnpm run dev
    ```
 
-## Deploy
+## Desplegar
 
-### Deploy With Vercel
+### Implementar con Vercel
 
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Fddiu8081%2Fchatgpt-demo&env=OPENAI_API_KEY&envDescription=OpenAI%20API%20Key&envLink=https%3A%2F%2Fplatform.openai.com%2Faccount%2Fapi-keys)
+[![Implementar con Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Fddiu8081%2Fchatgpt-demo&env=OPENAI_API_KEY&envDescription=OpenAI%20API%20Key&envLink=https%3A%2F%2Fplatform.openai.com%2Faccount%2Fapi-keys)
 
 
 
-> #### 🔒 Need website password?
+> #### 🔒 ¿Necesita la contraseña del sitio web?
 >
-> Deploy with the [`SITE_PASSWORD`](#environment-variables)
+> Implementar con el [`SITE_PASSWORD`](#environment-variables)
 >
 > <a href="https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Fddiu8081%2Fchatgpt-demo&env=OPENAI_API_KEY&env=SITE_PASSWORD&envDescription=OpenAI%20API%20Key&envLink=https%3A%2F%2Fplatform.openai.com%2Faccount%2Fapi-keys" alt="Deploy with Vercel" target="_blank"><img src="https://vercel.com/button" alt="Deploy with Vercel" height=24 style="vertical-align: middle; margin-right: 4px;"></a>
 
 ![image](https://cdn.staticaly.com/gh/yzh990918/static@master/20230310/image.4wzfb79qt7k0.webp)
 
 
-### Deploy With Netlify
+### Implementar con Docker
 
-[![Deploy with Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/ddiu8081/chatgpt-demo#OPENAI_API_KEY=&HTTPS_PROXY=&OPENAI_API_BASE_URL=&HEAD_SCRIPTS=&PUBLIC_SECRET_KEY=&OPENAI_API_MODEL=&SITE_PASSWORD=)
+Las variables de entorno se refieren a la documentación a continuación. [Dirección de Docker Hub](https://hub.docker.com/r/ddiu8081/chatgpt-demo).
 
-**Step-by-step deployment tutorial:**
-
-1. [Fork](https://github.com/ddiu8081/chatgpt-demo/fork) this project，Go to [https://app.netlify.com/start](https://app.netlify.com/start) new Site, select the project you `forked` done, and connect it with your `GitHub` account.
-
-![image](https://cdn.staticaly.com/gh/yzh990918/static@master/20230310/image.3nlt4hgzb16o.webp)
-
-![image](https://cdn.staticaly.com/gh/yzh990918/static@master/20230310/image.5fhfouap270g.webp)
-
-
-2. Select the branch you want to deploy, then configure environment variables in the project settings.
-
-![image](https://cdn.staticaly.com/gh/yzh990918/static@master/20230311/image.gfs9lx8c854.webp)
-
-3. Select the default build command and output directory, Click the `Deploy Site` button to start deploying the site。
-
-![image](https://cdn.staticaly.com/gh/yzh990918/static@master/20230311/image.4jky9e1wbojk.webp)
-
-
-### Deploy with Docker
-
-Environment variables refer to the documentation below. [Docker Hub address](https://hub.docker.com/r/ddiu8081/chatgpt-demo).
-
-**Direct run**
+**Ejecución directa**
 ```bash
-docker run --name=chatgpt-demo -e OPENAI_API_KEY=YOUR_OPEN_API_KEY -p 3000:3000 -d ddiu8081/chatgpt-demo:latest
+docker run --name=chatdemon -e OPENAI_API_KEY=YOUR_OPEN_API_KEY -p 3000:3000 -d ddiu8081/chatdemon:latest
 ```
-`-e` define environment variables in the container.
+`-e` definir variables de entorno en el contenedor.
 
 
-**Docker compose**
+**Componer ventana acoplable**
 ```yml
 version: '3'
 
@@ -124,50 +92,50 @@ docker compose up -d
 docker-compose down
 ```
 
-### Deploy on more servers
+### Implementar en más servidores
 
-Please refer to the official deployment documentation：https://docs.astro.build/en/guides/deploy
+Consulte la documentación oficial de implementación.：https://docs.astro.build/en/guides/deploy
 
-## Environment Variables
+## Variables de entorno
 
-You can control the website through environment variables.
+Puede controlar el sitio web a través de variables de entorno.
 
-| Name | Description | Default |
+| Nombre | Descripción | Default |
 | --- | --- | --- |
-| `OPENAI_API_KEY` | Your API Key for OpenAI. | `null` |
-| `HTTPS_PROXY` | Provide proxy for OpenAI API. e.g. `http://127.0.0.1:7890` | `null` |
-| `OPENAI_API_BASE_URL` | Custom base url for OpenAI API. | `https://api.openai.com` |
-| `HEAD_SCRIPTS` | Inject analytics or other scripts before `</head>` of the page | `null` |
-| `PUBLIC_SECRET_KEY` | Secret string for the project. Use for generating signatures for API calls | `null` |
-| `SITE_PASSWORD` | Set password for site, support multiple password separated by comma. If not set, site will be public | `null` |
-| `OPENAI_API_MODEL` | ID of the model to use. [List models](https://platform.openai.com/docs/api-reference/models/list) | `gpt-3.5-turbo` |
+| `OPENAI_API_KEY` | Su clave API para OpenAI. | `null` |
+| `HTTPS_PROXY` | Proporcionar proxy para la API de OpenAI. e.g. `http://127.0.0.1:7890` | `null` |
+| `OPENAI_API_BASE_URL` | URL base personalizada para la API de OpenAI. | `https://api.openai.com` |
+| `HEAD_SCRIPTS` | Inyectar análisis u otros scripts antes `</head>` de la pagina | `null` |
+| `PUBLIC_SECRET_KEY` | Cadena secreta para el proyecto. Uso para generar firmas para llamadas API | `null` |
+| `SITE_PASSWORD` | Establezca una contraseña para el sitio, admita varias contraseñas separadas por comas. Si no se establece, el sitio será público | `null` |
+| `OPENAI_API_MODEL` | ID del modelo a utilizar. [Lista de modelos](https://platform.openai.com/docs/api-reference/models/list) | `gpt-3.5-turbo` |
 
 
-## Frequently Asked Questions
+## Preguntas frecuentes
 
-Q: TypeError: fetch failed (can't connect to OpenAI Api)
+Q: TypeError: búsqueda fallida (no se puede conectar a OpenAI Api)
 
-A: Configure environment variables `HTTPS_PROXY`，reference: https://github.com/ddiu8081/chatgpt-demo/issues/34
+A: Configurar variables de entorno `HTTPS_PROXY`，referencia: https://github.com/GyutaroNc/CHATGPT/issues
 
-Q: throw new TypeError(${context} is not a ReadableStream.)
+Q: lanzar un nuevo TypeError(${context} no es un ReadableStream.)
 
-A: The Node version needs to be `v18` or later，reference: https://github.com/ddiu8081/chatgpt-demo/issues/65
+A: La versión del nodo debe ser `v18` o posterior, referencia: https://github.com/GyutaroNc/CHATGPT/issues
 
-Q: Accelerate domestic access without the need for proxy deployment tutorial?
+Q: ¿Acelerar el acceso doméstico sin la necesidad de un tutorial de implementación de proxy?
 
-A: You can refer to this tutorial: https://github.com/ddiu8081/chatgpt-demo/discussions/270
+A: Puedes consultar este tutorial: https://github.com/GyutaroNc/CHATGPT/discussions
 
-Q: `PWA` is not working?
+Q: `PWA` no está trabajando?
 
-A: Current `PWA` does not support deployment on Netlify, you can choose vercel or node deployment.
-## Contributing
+A: Actual `PWA` no admite la implementación en Netlify, puede elegir la implementación de vercel o nodo.
+## Contribuyendo
 
-This project exists thanks to all those who contributed.
+Este proyecto existe gracias a todos los que contribuyeron.
 
-Thank you to all our supporters!🙏
+¡Gracias a todos nuestros seguidores!🙏
 
 [![img](https://contributors.nn.ci/api?repo=ddiu8081/chatgpt-demo)](https://github.com/ddiu8081/chatgpt-demo/graphs/contributors)
 
 ## License
 
-MIT © [ddiu8081](https://github.com/ddiu8081/chatgpt-demo/blob/main/LICENSE)
+MIT © [GyutaroNc](https://github.com/GyutaroNc/CHATGPT/blob/main/LICENSE)
