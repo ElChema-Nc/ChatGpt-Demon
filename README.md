@@ -2,7 +2,7 @@
 
 Un repositorio de demostración basado en [OpenAI GPT-3.5 Turbo API.](https://platform.openai.com/docs/guides/chat)
 
-**🍿 Vista previa**: https://chatgpt-agfa.vercel.app
+**🍿 Vista previa**: https://chat-gpt-demon.vercel.app/
 
 > ⚠️ Aviso: nuestro límite de clave API se ha agotado. Por lo tanto, el sitio de demostración no está disponible ahora.
 
@@ -40,7 +40,7 @@ Un repositorio de demostración basado en [OpenAI GPT-3.5 Turbo API.](https://pl
 
 ### Implementar con Vercel
 
-[![Implementar con Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Fddiu8081%2Fchatgpt-demo&env=OPENAI_API_KEY&envDescription=OpenAI%20API%20Key&envLink=https%3A%2F%2Fplatform.openai.com%2Faccount%2Fapi-keys)
+[![Implementar con Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2FGyutaroNc%2FChatGpt-Demon&env=OPENAI_API_KEY&envDescription=OpenAI%20API%20Key&envLink=https%3A%2F%2Fplatform.openai.com%2Faccount%2Fapi-keys)
 
 
 
@@ -138,4 +138,4 @@ Este proyecto existe gracias a todos los que contribuyeron.
 
 ## License
 
-MIT © [GyutaroNc](https://github.com/GyutaroNc/CHATGPT/blob/main/LICENSE)
+MIT © [GyutaroNc](https://github.com/GyutaroNc/ChatGpt-Demon/blob/main/LICENSE)
