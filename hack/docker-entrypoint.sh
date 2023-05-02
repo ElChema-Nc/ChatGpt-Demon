@@ -11,12 +11,12 @@ function init() {
 function main {
   init
 
-  echo "Starting service..."
+  echo "Servicio de inicio..."
   eval "$sub_service_command &"
   sub_service_pid=$!
 
   trap cleanup SIGTERM SIGINT
-  echo "Running script..."
+  echo "Ejecución del script..."
   while [ true ]; do
       sleep 5
   done
