@@ -23,7 +23,7 @@ function main {
 }
 
 function cleanup {
-  echo "Cleaning up!"
+  echo "Limpiar!"
   kill -TERM $sub_service_pid
 }
 
