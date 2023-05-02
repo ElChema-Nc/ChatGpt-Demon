@@ -115,15 +115,15 @@ Puede controlar el sitio web a través de variables de entorno.
 
 Q: TypeError: búsqueda fallida (no se puede conectar a OpenAI Api)
 
-A: Configurar variables de entorno `HTTPS_PROXY`，referencia: https://github.com/GyutaroNc/CHATGPT/issues
+A: Configurar variables de entorno `HTTPS_PROXY`，referencia: https://github.com/ElChema-Nc/ChatGpt-Demon/issues
 
 Q: lanzar un nuevo TypeError(${context} no es un ReadableStream.)
 
-A: La versión del nodo debe ser `v18` o posterior, referencia: https://github.com/GyutaroNc/CHATGPT/issues
+A: La versión del nodo debe ser `v18` o posterior, referencia: https://github.com/GyutaroNc/ChatGpt-Demon/issues
 
 Q: ¿Acelerar el acceso doméstico sin la necesidad de un tutorial de implementación de proxy?
 
-A: Puedes consultar este tutorial: https://github.com/GyutaroNc/CHATGPT/discussions
+A: Puedes consultar este tutorial: https://github.com/GyutaroNc/ChatGpt-Demon/discussions
 
 Q: `PWA` no está trabajando?
 
