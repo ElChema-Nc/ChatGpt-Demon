@@ -55,11 +55,11 @@ Un repositorio de demostración basado en [OpenAI GPT-3.5 Turbo API.](https://pl
 
 ### Implementar con Docker
 
-Las variables de entorno se refieren a la documentación a continuación. [Dirección de Docker Hub](https://hub.docker.com/r/ddiu8081/chatgpt-demo).
+Las variables de entorno se refieren a la documentación a continuación. [Dirección de Docker Hub](https://hub.docker.com/r/ElChema-Nc/ChatGpt-Demon).
 
 **Ejecución directa**
 ```bash
-docker run --name=chatdemon -e OPENAI_API_KEY=YOUR_OPEN_API_KEY -p 3000:3000 -d ddiu8081/chatdemon:latest
+docker run --name=Chatdemon -e OPENAI_API_KEY=YOUR_OPEN_API_KEY -p 3000:3000 -d elchema-nc/chatdemon:latest
 ```
 `-e` definir variables de entorno en el contenedor.
 
@@ -70,8 +70,8 @@ version: '3'
 
 services:
   chatgpt-demo:
-    image: ddiu8081/chatgpt-demo:latest
-    container_name: chatgpt-demo
+    image: elchema-nc/chatgpt-demon:latest
+    container_name: chatgpt-demon
     restart: always
     ports:
       - '3000:3000'
@@ -128,13 +128,6 @@ A: Puedes consultar este tutorial: https://github.com/ElChema-Nc/ChatGpt-Demon/d
 Q: `PWA` no está trabajando?
 
 A: Actual `PWA` no admite la implementación en Netlify, puede elegir la implementación de vercel o nodo.
-## Contribuyendo
-
-Este proyecto existe gracias a todos los que contribuyeron.
-
-¡Gracias a todos nuestros seguidores!🙏
-
-[![img](https://contributors.nn.ci/api?repo=ddiu8081/chatgpt-demo)](https://github.com/ddiu8081/chatgpt-demo/graphs/contributors)
 
 ## License
 
