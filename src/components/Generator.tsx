@@ -228,7 +228,7 @@ export default () => {
         fallback={() => (
           <div class="gen-cb-wrapper">
             <span>Estoy pensando...</span>
-            <div class="gen-cb-stop" onClick={stopStreamFetch}>Stop</div>
+            <div class="gen-cb-stop" onClick={stopStreamFetch}>Parar</div>
           </div>
         )}
       >
@@ -248,7 +248,7 @@ export default () => {
             class="gen-textarea"
           />
           <button onClick={handleButtonClick} disabled={systemRoleEditing()} gen-slate-btn>
-            Send
+            Enviar
           </button>
           <button title="Clear" onClick={clear} disabled={systemRoleEditing()} gen-slate-btn>
             <IconClear />
