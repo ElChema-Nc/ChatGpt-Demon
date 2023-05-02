@@ -40,7 +40,7 @@ Un repositorio de demostración basado en [OpenAI GPT-3.5 Turbo API.](https://pl
 
 ### Implementar con Vercel
 
-[![Implementar con Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2FGyutaroNc%2FChatGpt-Demon&env=OPENAI_API_KEY&envDescription=OpenAI%20API%20Key&envLink=https%3A%2F%2Fplatform.openai.com%2Faccount%2Fapi-keys)
+[![Implementar con Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2FElChema-Nc%2FChatGpt-Demon&env=OPENAI_API_KEY&envDescription=OpenAI%20API%20Key&envLink=https%3A%2F%2Fplatform.openai.com%2Faccount%2Fapi-keys)
 
 
 
@@ -48,7 +48,7 @@ Un repositorio de demostración basado en [OpenAI GPT-3.5 Turbo API.](https://pl
 >
 > Implementar con el [`SITE_PASSWORD`](#environment-variables)
 >
-> <a href="https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2FGyutaroNc%2FChatGpt-Demon&env=OPENAI_API_KEY&env=SITE_PASSWORD&envDescription=OpenAI%20API%20Key&envLink=https%3A%2F%2Fplatform.openai.com%2Faccount%2Fapi-keys" alt="Deploy with Vercel" target="_blank"><img src="https://vercel.com/button" alt="Deploy with Vercel" height=24 style="vertical-align: middle; margin-right: 4px;"></a>
+> <a href="https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2FElChema-Nc%2FChatGpt-Demon&env=OPENAI_API_KEY&env=SITE_PASSWORD&envDescription=OpenAI%20API%20Key&envLink=https%3A%2F%2Fplatform.openai.com%2Faccount%2Fapi-keys" alt="Deploy with Vercel" target="_blank"><img src="https://vercel.com/button" alt="Deploy with Vercel" height=24 style="vertical-align: middle; margin-right: 4px;"></a>
 
 ![image](https://cdn.staticaly.com/gh/yzh990918/static@master/20230310/image.4wzfb79qt7k0.webp)
 
@@ -119,11 +119,11 @@ A: Configurar variables de entorno `HTTPS_PROXY`，referencia: https://github.co
 
 Q: lanzar un nuevo TypeError(${context} no es un ReadableStream.)
 
-A: La versión del nodo debe ser `v18` o posterior, referencia: https://github.com/GyutaroNc/ChatGpt-Demon/issues
+A: La versión del nodo debe ser `v18` o posterior, referencia: https://github.com/ElChema-Nc/ChatGpt-Demon/issues
 
 Q: ¿Acelerar el acceso doméstico sin la necesidad de un tutorial de implementación de proxy?
 
-A: Puedes consultar este tutorial: https://github.com/GyutaroNc/ChatGpt-Demon/discussions
+A: Puedes consultar este tutorial: https://github.com/ElChema-Nc/ChatGpt-Demon/discussions
 
 Q: `PWA` no está trabajando?
 
@@ -138,4 +138,4 @@ Este proyecto existe gracias a todos los que contribuyeron.
 
 ## License
 
-MIT © [GyutaroNc](https://github.com/GyutaroNc/ChatGpt-Demon/blob/main/LICENSE)
+MIT © [ElChema-Nc](https://github.com/ElChema-Nc/ChatGpt-Demon/blob/main/LICENSE)
