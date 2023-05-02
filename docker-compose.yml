@@ -2,7 +2,7 @@ version: '3'
 
 services:
   chatgpt-demon:
-    image: elchema-nc/chatgpt-demon:latest
+    image: elchema/chatgpt-demon:latest
     container_name: chatgpt-demon
     restart: always
     ports:
