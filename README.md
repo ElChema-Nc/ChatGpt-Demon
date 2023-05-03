@@ -69,7 +69,7 @@ docker run --name=Chatdemon -e OPENAI_API_KEY=YOUR_OPEN_API_KEY -p 3000:3000 -d 
 version: '3'
 
 services:
-  chatgpt-demo:
+  chatgpt-demon:
     image: elchema-nc/chatgpt-demon:latest
     container_name: chatgpt-demon
     restart: always
