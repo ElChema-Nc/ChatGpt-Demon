@@ -6,7 +6,7 @@ Un repositorio de demostración basado en [OpenAI GPT-3.5 Turbo API.](https://pl
 
 > ⚠️ Aviso: nuestro límite de clave API se ha agotado. Por lo tanto, el sitio de demostración no está disponible ahora.
 
-![chat-logo](https://cdn.staticaly.com/gh/yzh990918/static@master/chat-logo.webp)
+![chat-logo](https://i.ibb.co/ZxZNJfM/Chat-Gpt-Demon.jpg)
 
 ## Ejecución local
 
