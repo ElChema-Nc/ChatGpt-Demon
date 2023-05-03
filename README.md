@@ -50,7 +50,7 @@ Un repositorio de demostración basado en [OpenAI GPT-3.5 Turbo API.](https://pl
 >
 > <a href="https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2FElChema-Nc%2FChatGpt-Demon&env=OPENAI_API_KEY&env=SITE_PASSWORD&envDescription=OpenAI%20API%20Key&envLink=https%3A%2F%2Fplatform.openai.com%2Faccount%2Fapi-keys" alt="Deploy with Vercel" target="_blank"><img src="https://vercel.com/button" alt="Deploy with Vercel" height=24 style="vertical-align: middle; margin-right: 4px;"></a>
 
-![image](https://cdn.staticaly.com/gh/yzh990918/static@master/20230310/image.4wzfb79qt7k0.webp)
+![image](https://i.ibb.co/LzcCLgj/Clonar-Chat-Gpt-Demon.jpg)
 
 
 ### Implementar con Docker
