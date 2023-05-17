@@ -1,0 +1,15 @@
+name:  Corrección de errores tipográficos / gramaticales
+description: ¡Puedes seguir adelante y enviar un PR! ¡Gracias!
+labels: []
+body:
+  - type: markdown
+    attributes:
+      value: |
+        ## PR Welcome!
+
+        Si el error tipográfico o gramatical es trivial y sencillo, puede ayudar **enviando directamente una solicitud de extracción rápida**!
+        Si ve varios de ellos, le sugerimos que los combine en un solo PR. ¡Gracias!
+  - type: textarea
+    id: context
+    attributes:
+      label: Contexto adicional
