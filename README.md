@@ -2,7 +2,7 @@
 
 Un repositorio de demostración basado en [OpenAI GPT-3.5 Turbo API.](https://platform.openai.com/docs/guides/chat)
 
-**🍿 Vista previa**: https://chatgpt-demon.vercel.app/
+**🍿 Vista previa**: https://chat-gpt-demon.vercel.app
 
 > ⚠️ Aviso: nuestro límite de clave API se ha agotado. Por lo tanto, el sitio de demostración no está disponible ahora.
 
