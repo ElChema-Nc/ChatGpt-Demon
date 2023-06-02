@@ -30,13 +30,13 @@ export default () => {
     })
 
     try {
-      if (localStorage.getItem('messageList'))
-        setMessageList(JSON.parse(localStorage.getItem('messageList')))
+      if (sessionStorage.getItem('messageList'))
+        setMessageList(JSON.parse(sessionStorage.getItem('messageList')))
 
-      if (localStorage.getItem('systemRoleSettings'))
-        setCurrentSystemRoleSettings(localStorage.getItem('systemRoleSettings'))
+      if (sessionStorage.getItem('systemRoleSettings'))
+        setCurrentSystemRoleSettings(sessionStorage.getItem('systemRoleSettings'))
 
-      if (localStorage.getItem('stickToBottom') === 'stick')
+      if (sessionStorage.getItem('stickToBottom') === 'stick')
         setStick(true)
     } catch (err) {
       console.error(err)
@@ -49,9 +49,9 @@ export default () => {
   })
 
   const handleBeforeUnload = () => {
-    localStorage.setItem('messageList', JSON.stringify(messageList()))
-    localStorage.setItem('systemRoleSettings', currentSystemRoleSettings())
-    isStick() ? localStorage.setItem('stickToBottom', 'stick') : localStorage.removeItem('stickToBottom')
+    sessionStorage.setItem('messageList', JSON.stringify(messageList()))
+    sessionStorage.setItem('systemRoleSettings', currentSystemRoleSettings())
+    isStick() ? sessionStorage.setItem('stickToBottom', 'stick') : sessionStorage.removeItem('stickToBottom')
   }
 
   const handleButtonClick = async() => {
@@ -83,7 +83,7 @@ export default () => {
     setLoading(true)
     setCurrentAssistantMessage('')
     setCurrentError(null)
-    const storagePassword = localStorage.getItem('pass')
+    const storagePassword = sessionStorage.getItem('pass')
     try {
       const controller = new AbortController()
       setController(controller)
@@ -158,7 +158,9 @@ export default () => {
       setCurrentAssistantMessage('')
       setLoading(false)
       setController(null)
-      inputRef.focus()
+      // Disable auto-focus on touch devices
+      if (!('ontouchstart' in document.documentElement || navigator.maxTouchPoints > 0))
+        inputRef.focus()
     }
   }
 
@@ -182,7 +184,6 @@ export default () => {
       const lastMessage = messageList()[messageList().length - 1]
       if (lastMessage.role === 'assistant')
         setMessageList(messageList().slice(0, -1))
-
       requestWithLatestMessage()
     }
   }
