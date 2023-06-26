@@ -36,7 +36,7 @@ export default () => {
       if (sessionStorage.getItem('systemRoleSettings'))
         setCurrentSystemRoleSettings(sessionStorage.getItem('systemRoleSettings'))
 
-      if (sessionStorage.getItem('stickToBottom') === 'stick')
+      if (localStorage.getItem('stickToBottom') === 'stick')
         setStick(true)
     } catch (err) {
       console.error(err)
@@ -51,7 +51,7 @@ export default () => {
   const handleBeforeUnload = () => {
     sessionStorage.setItem('messageList', JSON.stringify(messageList()))
     sessionStorage.setItem('systemRoleSettings', currentSystemRoleSettings())
-    isStick() ? sessionStorage.setItem('stickToBottom', 'stick') : sessionStorage.removeItem('stickToBottom')
+    isStick() ? localStorage.setItem('stickToBottom', 'stick') : localStorage.removeItem('stickToBottom')
   }
 
   const handleButtonClick = async() => {
@@ -83,7 +83,7 @@ export default () => {
     setLoading(true)
     setCurrentAssistantMessage('')
     setCurrentError(null)
-    const storagePassword = sessionStorage.getItem('pass')
+    const storagePassword = localStorage.getItem('pass')
     try {
       const controller = new AbortController()
       setController(controller)
@@ -229,7 +229,7 @@ export default () => {
         fallback={() => (
           <div class="gen-cb-wrapper">
             <span>Estoy pensando...</span>
-            <div class="gen-cb-stop" onClick={stopStreamFetch}>Parar</div>
+            <div class="gen-cb-stop" onClick={stopStreamFetch}>Stop</div>
           </div>
         )}
       >
@@ -249,7 +249,7 @@ export default () => {
             class="gen-textarea"
           />
           <button onClick={handleButtonClick} disabled={systemRoleEditing()} gen-slate-btn>
-            Enviar
+            Send
           </button>
           <button title="Clear" onClick={clear} disabled={systemRoleEditing()} gen-slate-btn>
             <IconClear />
