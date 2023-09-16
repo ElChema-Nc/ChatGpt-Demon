@@ -1,5 +1,5 @@
 {
-  "name": "ChatGtp-Demon",
+  "name": "ChatGpt-Demon",
   "version": "1.0.7",
   "packageManager": "pnpm@7.28.0",
   "scripts": {
