@@ -1,6 +1,7 @@
-import { Show } from 'solid-js'
+import { Show, createSignal, createEffect } from 'solid-js'
 import IconEnv from './icons/Env'
 import IconX from './icons/X'
+import SettingsSlider from './SettingsSlider'
 import type { Accessor, Setter } from 'solid-js'
 
 interface Props {
@@ -9,15 +10,21 @@ interface Props {
   setSystemRoleEditing: Setter<boolean>
   currentSystemRoleSettings: Accessor<string>
   setCurrentSystemRoleSettings: Setter<string>
+  temperatureSetting: (value: number) => void
 }
 
 export default (props: Props) => {
   let systemInputRef: HTMLTextAreaElement
+  const [temperature, setTemperature] = createSignal(0.6)
 
   const handleButtonClick = () => {
     props.setCurrentSystemRoleSettings(systemInputRef.value)
     props.setSystemRoleEditing(false)
   }
+
+  createEffect(() => {
+    props.temperatureSetting(temperature())
+  })
 
   return (
     <div class="my-4">
@@ -28,7 +35,7 @@ export default (props: Props) => {
               <Show when={props.canEdit()} fallback={<IconEnv />}>
                 <span onClick={() => props.setCurrentSystemRoleSettings('')} class="sys-edit-btn p-1 rd-50%" > <IconX /> </span>
               </Show>
-              <span>Función del sistema: </span>
+              <span>Agregar Rol de sistema ( Temp = {temperature()} ) : </span>
             </div>
             <div class="mt-1">
               {props.currentSystemRoleSettings()}
@@ -38,7 +45,7 @@ export default (props: Props) => {
         <Show when={!props.currentSystemRoleSettings() && props.canEdit()}>
           <span onClick={() => props.setSystemRoleEditing(!props.systemRoleEditing())} class="sys-edit-btn">
             <IconEnv />
-            <span>Agregar rol de sistema</span>
+            <span>Agregar función del sistema</span>
           </span>
         </Show>
       </Show>
@@ -46,22 +53,38 @@ export default (props: Props) => {
         <div>
           <div class="fi gap-1 op-50 dark:op-60">
             <IconEnv />
-            <span>Función del sistema:</span>
+            <span>Rol del sistema:</span>
           </div>
-          <p class="my-2 leading-normal text-sm op-50 dark:op-60">Instruya suavemente al asistente y establezca el comportamiento del asistente.</p>
+          <p class="my-2 leading-normal text-sm op-50 dark:op-60">Gently instruct the assistant and set the behavior of the assistant.</p>
           <div>
             <textarea
               ref={systemInputRef!}
-              placeholder="Eres un asistente útil, responde de la manera más concisa posible....."
+              placeholder="Eres un asistente útil, responde lo más concisamente posible....."
               autocomplete="off"
               autofocus
               rows="3"
               gen-textarea
             />
           </div>
-          <button onClick={handleButtonClick} gen-slate-btn>
-            Colocar
-          </button>
+          <div class="w-full fi fb">
+            <button onClick={handleButtonClick} gen-slate-btn>
+              Set
+            </button>
+            <div class="w-full ml-2">
+              <SettingsSlider
+                settings={{
+                  name: 'Temperature',
+                  type: 'slider',
+                  min: 0,
+                  max: 2,
+                  step: 0.01,
+                }}
+                editing={() => true}
+                value={temperature}
+                setValue={setTemperature}
+              />
+            </div>
+          </div>
         </div>
       </Show>
     </div>
