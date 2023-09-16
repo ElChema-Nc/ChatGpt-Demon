@@ -17,7 +17,7 @@ export const post: APIRoute = async(context) => {
   if (!messages) {
     return new Response(JSON.stringify({
       error: {
-        message: 'No input text.',
+        message: 'Sin texto de entrada.',
       },
     }), { status: 400 })
   }
