@@ -17,6 +17,9 @@ export default () => {
   const [loading, setLoading] = createSignal(false)
   const [controller, setController] = createSignal<AbortController>(null)
   const [isStick, setStick] = createSignal(false)
+  const [temperature, setTemperature] = createSignal(0.6);
+  const temperatureSetting = (value: number) => { setTemperature(value) }
+  const maxHistoryMessages = parseInt(import.meta.env.PUBLIC_MAX_HISTORY_MESSAGES || '9')
 
   createEffect(() => (isStick() && smoothToBottom()))
 
@@ -87,7 +90,7 @@ export default () => {
     try {
       const controller = new AbortController()
       setController(controller)
-      const requestMessageList = [...messageList()]
+      const requestMessageList = messageList().slice(-maxHistoryMessages)
       if (currentSystemRoleSettings()) {
         requestMessageList.unshift({
           role: 'system',
@@ -105,6 +108,7 @@ export default () => {
             t: timestamp,
             m: requestMessageList?.[requestMessageList.length - 1]?.content || '',
           }),
+          temperature: temperature(),
         }),
         signal: controller.signal,
       })
@@ -112,11 +116,11 @@ export default () => {
         const error = await response.json()
         console.error(error.error)
         setCurrentError(error.error)
-        throw new Error('Request failed')
+        throw new Error('Solicitud fallida')
       }
       const data = response.body
       if (!data)
-        throw new Error('No data')
+        throw new Error('Sin datos')
 
       const reader = data.getReader()
       const decoder = new TextDecoder('utf-8')
@@ -192,7 +196,7 @@ export default () => {
     if (e.isComposing || e.shiftKey)
       return
 
-    if (e.keyCode === 13) {
+    if (e.key === 'Enter') {
       e.preventDefault()
       handleButtonClick()
     }
@@ -206,6 +210,7 @@ export default () => {
         setSystemRoleEditing={setSystemRoleEditing}
         currentSystemRoleSettings={currentSystemRoleSettings}
         setCurrentSystemRoleSettings={setCurrentSystemRoleSettings}
+        temperatureSetting={temperatureSetting}
       />
       <Index each={messageList()}>
         {(message, index) => (
@@ -228,7 +233,7 @@ export default () => {
         when={!loading()}
         fallback={() => (
           <div class="gen-cb-wrapper">
-            <span>Estoy pensando...</span>
+            <span>Esperate estoy pensando...</span>
             <div class="gen-cb-stop" onClick={stopStreamFetch}>Stop</div>
           </div>
         )}
@@ -238,7 +243,7 @@ export default () => {
             ref={inputRef!}
             disabled={systemRoleEditing()}
             onKeyDown={handleKeydown}
-            placeholder="ingresa tu pregunta..."
+            placeholder="Introduce tu pregunta..."
             autocomplete="off"
             autofocus
             onInput={() => {
